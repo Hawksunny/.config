@@ -204,12 +204,16 @@ bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # Autostart applications
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id compton -b
+exec --no-startup-id cbatticon
 exec --no-startup-id nm-applet
 exec --no-startup-id blueberry-tray
 exec variety
 exec fcitx
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id optimus-manager-qt
+exec --no-startup-id ~/.config/i3/tap-to-click.sh
+exec --no-startup-id ~/.config/i3/inverse-scroll.sh
 
 # Set inner/outer gaps
 gaps inner 5
