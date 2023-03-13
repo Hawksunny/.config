@@ -98,8 +98,11 @@ noremap K 5k
 noremap L $
 " CMD quickly
 noremap ; :
+" find next or previous
+"noremap " ,
+"noremap ' ;
 " Escape quickly
-inoremap jk <ESC>l
+inoremap jk <ESC>
 " Split window quickly
 nmap <LEADER>h :set nosplitright<CR>:vsplit<CR>
 nmap <LEADER>j :set splitbelow<CR>:split<CR>

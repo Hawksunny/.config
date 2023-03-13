@@ -16,7 +16,9 @@ set $mod Mod4
 floating_modifier $mod
 
 # Configure border style (pixel | pixel xx | normal | none)
-new_window pixel 1
+#new_window pixel 1
+new_window none
+#new_window normal
 new_float normal
 
 # Hide borders
@@ -52,6 +54,9 @@ bindsym $mod+q kill
 
 # Start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
+
+# Switch to greeter when no use
+bindsym $mod+Shift+q exec dm-tool switch-to-greeter
 
 # Use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -188,8 +193,14 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start Applications
+# Start browser
 bindsym $mod+c exec chromium
+
+# Open GUI file manager
+bindsym $mod+Shift+f exec pcmanfm -d
+
+# Screen shot
+bindsym $mod+Shift+a exec flameshot gui
 
 # Change wallpaper
 bindsym $mod+n exec variety -n
@@ -205,7 +216,7 @@ bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_
 
 # Autostart applications
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec --no-startup-id compton -b
+exec --no-startup-id picom -b
 exec --no-startup-id cbatticon
 exec --no-startup-id nm-applet
 exec --no-startup-id blueberry-tray
@@ -220,7 +231,7 @@ gaps inner 5
 gaps outer -2
 
 # Smart gpas (gaps used if only more than one container on the workspace)
-smart_gaps on
+#smart_gaps on
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
