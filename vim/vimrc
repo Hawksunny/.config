@@ -67,6 +67,8 @@ set laststatus=2
 set autochdir
 " Keep your cursor status when close
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+" Search file recursively in project
+set path+=**
 
 
 """"""""""""""""""""""""""""""""
@@ -122,8 +124,8 @@ map <right> :vertical resize -1<CR>
 noremap <LEADER>v <C-w>t<C-w>H
 noremap <LEADER>h <C-w>t<C-w>K
 " Append blank line quickly
-nnoremap <CR> o<ESC>k
-nnoremap <S-CR> O<ESC>j
+nnoremap <CR> o<ESC>
+nnoremap <S-CR> O<ESC>
 " New tab
 nnoremap t :tabnew<CR>
 nnoremap - :tabNext<CR>
